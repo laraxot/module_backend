@@ -1,6 +1,6 @@
 <?php
 
-use Modules\Extend\Services\RouteService;
+use Modules\Xot\Services\RouteService;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

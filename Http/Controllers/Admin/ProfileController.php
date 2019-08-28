@@ -10,7 +10,7 @@ use Modules\Backend\Requests\ProfileRequest;
 //--- services
 use Modules\Theme\Services\ThemeService;
 //-------- requests ----------
-use Modules\Extend\Traits\CrudSimpleTrait as CrudTrait;
+use Modules\Xot\Traits\CrudSimpleTrait as CrudTrait;
 
 class ProfileController extends Controller
 {

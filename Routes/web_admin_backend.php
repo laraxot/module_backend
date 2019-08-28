@@ -1,7 +1,7 @@
 <?php
 
 
-use Modules\Extend\Traits\RouteTrait;
+use Modules\Xot\Traits\RouteTrait;
 
 $namespace = $this->getNamespace();
 $pack = class_basename($namespace);

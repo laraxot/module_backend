@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 //--- services
 use Modules\Theme\Services\ThemeService;
 //--- traits 
-use Modules\Extend\Traits\ArtisanTrait;
+use Modules\Xot\Traits\ArtisanTrait;
 
 class BackendController extends Controller
 {

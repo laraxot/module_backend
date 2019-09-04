@@ -8,8 +8,10 @@ use Modules\Theme\Services\ThemeService;
 //--- traits 
 use Modules\Xot\Traits\ArtisanTrait;
 
-class BackendController extends Controller
-{
+use Modules\Xot\Services\ArtisanService;
+
+class BackendController extends Controller{
+
     public function index(Request $request){
         if ($request->act=='routelist') {
             return ArtisanTrait::exe('route:list');
@@ -22,9 +24,8 @@ class BackendController extends Controller
     }
 
     public function dashboard(Request $request){
-        if ($request->act=='routelist') {
-            return ArtisanTrait::exe('route:list');
-        }
-        return ThemeService::view();
+        $out=ArtisanService::act($request->act);
+        if($out!='') return $out;
+        return ThemeService::view('adm_theme::admin.dashboard');
     }
 }

@@ -1,6 +1,5 @@
 <?php
 
-use Modules\Xot\Services\RouteService;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +15,7 @@ Route::prefix('backend')->group(function() {
     Route::get('/', 'BackendController@index');
 });
 */
-$namespace = '\Modules\Backend';//$this->getNamespace();
+$namespace = '\Modules\Backend'; //$this->getNamespace();
 $pack = class_basename($namespace);
 $middleware = ['web', 'auth'/*,'verified'*/];
 $prefix = 'admin';

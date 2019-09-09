@@ -1,26 +1,22 @@
 <?php
 
-
-
 namespace Modules\Backend\Controllers\Admin\Backend;
 
 use Pion\Laravel\ChunkUpload\Exceptions\UploadMissingFileException;
 use Pion\Laravel\ChunkUpload\Handler\AbstractHandler;
 use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
 
-class DependencyUploadController extends UploadController
-{
+class DependencyUploadController extends UploadController {
     /**
      * Handles the file upload.
      *
      * @param FileReceiver $receiver
      *
-     * @return \Illuminate\Http\JsonResponse
-     *
      * @throws UploadMissingFileException
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function uploadFile(FileReceiver $receiver)
-    {
+    public function uploadFile(FileReceiver $receiver) {
         // check if the upload is success, throw exception or return response you need
         if (false === $receiver->isUploaded()) {
             throw new UploadMissingFileException();

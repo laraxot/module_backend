@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace Modules\Backend\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -11,15 +9,13 @@ use Illuminate\Http\Request;
 //use Modules\Trasferte\Rules\UppercaseRule; // solo per test
 //use Modules\Trasferte\Rules\DateTimeRangeRule;
 
-class ProfileRequest extends FormRequest
-{
+class ProfileRequest extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize() {
         return true;
     }
 
@@ -28,8 +24,7 @@ class ProfileRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             'first_name' => 'required|min:3|max:50',
             'last_name' => 'required|min:3|max:50',
@@ -43,8 +38,7 @@ class ProfileRequest extends FormRequest
      *
      * @return array
      */
-    public function messages()
-    {
+    public function messages() {
         return [
             'id_luogo_start_txt.required' => 'Luogo Partenza Obbligario!',
             'id_luogo_end_txt.required' => 'Luogo Trasferta Obbligatorio!',
@@ -60,8 +54,7 @@ class ProfileRequest extends FormRequest
      *
      * @return array
      */
-    public function filters()
-    {
+    public function filters() {
         return [
             'email' => 'trim|lowercase',
             'name' => 'trim|capitalize|escape',

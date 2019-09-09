@@ -1,6 +1,5 @@
 <?php
 
-
 // to study
 //https://laraveldaily.com/laravel-ajax-file-upload-blueimp-jquery-library/
 //https://hafiznor.wordpress.com/2016/07/05/laravel-import-read-excel-file-use-chunk-to-avoid-memory-fatal-error/
@@ -29,11 +28,9 @@ use Pion\Laravel\ChunkUpload\Handler\HandlerFactory;
 use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
 use Storage;
 
-class UploadController extends Controller
-{
+class UploadController extends Controller {
     //*
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         return $this->upload($request);
     }
 
@@ -49,13 +46,12 @@ class UploadController extends Controller
      *
      * @param Request $request
      *
-     * @return \Illuminate\Http\JsonResponse
-     *
      * @throws UploadMissingFileException
      * @throws \Pion\Laravel\ChunkUpload\Exceptions\UploadFailedException
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function uploadFile(FileReceiver $receiver)
-    {
+    public function uploadFile(FileReceiver $receiver) {
         // check if the upload is success, throw exception or return response you need
         if (false === $receiver->isUploaded()) {
             throw new UploadMissingFileException();
@@ -78,8 +74,7 @@ class UploadController extends Controller
         ]);
     }
 
-    public function upload(Request $request)
-    {
+    public function upload(Request $request) {
         // create the file receiver
         $receiver = new FileReceiver('file', $request, HandlerFactory::classFromRequest($request));
 
@@ -115,8 +110,7 @@ class UploadController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function saveFileToS3($file)
-    {
+    protected function saveFileToS3($file) {
         $fileName = $this->createFilename($file);
 
         $disk = Storage::disk('s3');
@@ -144,8 +138,7 @@ class UploadController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function saveFile(UploadedFile $file)
-    {
+    protected function saveFile(UploadedFile $file) {
         $fileName = $this->createFilename($file);
         // Group files by mime type
         $mime = \str_replace('/', '-', $file->getMimeType());
@@ -176,8 +169,7 @@ class UploadController extends Controller
      *
      * @return string
      */
-    protected function createFilename(UploadedFile $file)
-    {
+    protected function createFilename(UploadedFile $file) {
         $extension = $file->getClientOriginalExtension();
         $filename = \str_replace('.'.$extension, '', $file->getClientOriginalName()); // Filename without extension
 

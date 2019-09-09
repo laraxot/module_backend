@@ -1,6 +1,5 @@
 <?php
 
-
 use Modules\Xot\Traits\RouteTrait;
 
 $namespace = $this->getNamespace();

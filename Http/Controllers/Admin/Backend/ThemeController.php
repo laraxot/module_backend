@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace Modules\Backend\Controllers\Admin\Backend;
 
 use App\Http\Controllers\Controller;
@@ -9,10 +7,8 @@ use Illuminate\Http\Request;
 //--- services
 use Modules\Theme\Services\ThemeService;
 
-class ThemeController extends Controller
-{
-    public function index(Request $request)
-    {
+class ThemeController extends Controller {
+    public function index(Request $request) {
         $params = \Route::current()->parameters();
         $path = public_path('themes');
         $dirs = \File::directories($path);
@@ -30,8 +26,7 @@ class ThemeController extends Controller
 
     //end function
 
-    public function edit(Request $request)
-    {
+    public function edit(Request $request) {
         $params = \Route::current()->parameters();
         \extract($params);
         $msg = 'Theme ['.$id_theme.']!';

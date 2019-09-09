@@ -1,16 +1,12 @@
 <?php
 
-
-
 namespace Modules\Backend\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Artisan;
 
-class ArtisanController extends Controller
-{
-    public function exe($comando)
-    {
+class ArtisanController extends Controller {
+    public function exe($comando) {
         $output = '';
         try {
             Artisan::call($comando);

@@ -8,7 +8,7 @@
 @foreach($rows as $k=>$v)
 	@include($view.'.item')
 @endforeach
-{!! Form::bs3Submit() !!}
+{!! Form::bsSubmit() !!}
 {!! Form::close() !!}
 
 

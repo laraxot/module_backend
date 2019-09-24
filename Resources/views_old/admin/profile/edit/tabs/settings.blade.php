@@ -52,7 +52,7 @@
 		{{ Form::bsPassword('passwd') }}
 		{{ Form::bsPassword('passwd_confirmation') }}
 
-	{!! Form::bs3Submit() !!}
+	{!! Form::bsSubmit() !!}
 	{!! Form::close() !!}
 </div>
 <!-- /.tab-pane -->

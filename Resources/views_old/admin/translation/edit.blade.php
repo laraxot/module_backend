@@ -13,7 +13,7 @@
 	@include($view.'.item',['rows'=>$v,'sub'=>$k])
 	@endif
 @endforeach
-{!! Form::bs3Submit() !!}
+{!! Form::bsSubmit() !!}
 {!! Form::close() !!}
 {{--
 <br class="clearfix"/>
